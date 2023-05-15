@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat > ./wc_testing/.env <<EOF
+cat > ./Alfred/.env <<EOF
 
 TG_TOKEN = somestring
 OPENAI_TOKEN = somestring
