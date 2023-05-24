@@ -1,3 +1,11 @@
-*.env
-*.setenv
+.idea/
+
+**/static
+**/logs
+**/media
 **/__pycache__
+
+.env
+.setenv
+
+make-env.sh

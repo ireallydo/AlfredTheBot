@@ -2,7 +2,6 @@ import os
 import sys
 from datetime import timedelta
 from loguru import logger
-from loguru._defaults import LOGURU_TRACE_NO
 
 
 def setup_logger(settings):
@@ -14,16 +13,24 @@ def setup_logger(settings):
         pass  # if passed file path consist only of filename
 
     logger.remove()
-    log_format = "[{time:YYYY-MM-DD HH:mm:ss ZZ}] [{process}] [{level}] [{name}] {message}"
+
+    logger.level("TRACE", color="<fg #BDD9D9><b>")
+    logger.level("DEBUG", color="<fg #317DCE><b>")
+    logger.level("INFO", color="<fg #9ECDFF><b>")
+    logger.level("SUCCESS", color="<b>")
+    logger.level("WARNING", color="<fg #00FFFF><b>")
+    logger.level("ERROR", color="<fg #FCE94B><b>")
+    logger.level("CRITICAL", color="<fg #FF5733><b>")
+    log_format = "[{time:YYYY-MM-DD HH:mm:ss ZZ}] [{process}] [<level>{level}</level>] [{name}] {message}"
 
     logger.add(
         sink=sys.stdout,
-        level=LOGURU_TRACE_NO,
+        level="TRACE",
         format=log_format
     )
     logger.add(
         sink=settings.LOG_FILEPATH,
-        level=LOGURU_TRACE_NO,
+        level="TRACE",
         format=log_format,
         rotation=timedelta(days=settings.LOG_ROTATION),
         retention=timedelta(days=settings.LOG_RETENTION)

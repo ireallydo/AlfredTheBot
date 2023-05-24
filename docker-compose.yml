@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+
+  alfred:
+    container_name: alfred
+    restart: always
+    build:
+      dockerfile: ./docker/Dockerfile
