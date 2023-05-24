@@ -6,12 +6,16 @@ name = "pypi"
 [packages]
 aiohttp = "*"
 python-telegram-bot = "*"
+openai = "*"
 loguru = "*"
+SpeechRecognition = "*"
+gTTs = "*"
+ffmpeg = "*"
 
 [dev-packages]
 
 [packages.pydantic]
-extras = [ "dotenv"]
+extras = ["dotenv"]
 
 [requires]
 python_version = "3.7"
