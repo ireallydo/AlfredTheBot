@@ -1,7 +1,7 @@
 #!/bin/bash
 
-cat > ./Alfred/.env <<EOF
+cat > ./.env <<EOF
 
-TG_TOKEN = somestring
+TG_TOKEN = PUT_TELEGRAM_TOKEN_HERE
 
 EOF
